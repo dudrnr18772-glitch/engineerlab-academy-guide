@@ -35,7 +35,7 @@ export async function generateMetadata({
   if (!region || !qualification) return {};
 
   const content = buildDistinctDetailContent(region, qualification);
-  const canonical = `${siteUrl}/academy/${region.slug}/${qualification.slug}`;
+  const canonical = `${siteUrl}/academy/${region.slug}/${qualification.slug}/`;
 
   return {
     title: { absolute: content.title },
@@ -93,7 +93,7 @@ export default async function AcademyPage({
         "@type": "WebPage",
         name: content.title,
         description: content.description,
-        url: `${siteUrl}/academy/${region.slug}/${qualification.slug}`,
+        url: `${siteUrl}/academy/${region.slug}/${qualification.slug}/`,
         about: [
           { "@type": "Thing", name: qualification.name },
           { "@type": "Place", name: region.fullName },
@@ -112,7 +112,7 @@ export default async function AcademyPage({
             "@type": "ListItem",
             position: 2,
             name: region.province,
-            item: `${siteUrl}/regions/${region.provinceSlug}`,
+            item: `${siteUrl}/regions/${region.provinceSlug}/`,
           },
           {
             "@type": "ListItem",
@@ -206,7 +206,7 @@ export default async function AcademyPage({
           <nav className="breadcrumb" aria-label="경로">
             <Link href="/">홈</Link>
             <span>›</span>
-            <a href={`/regions/${region.provinceSlug}`}>{region.province}</a>
+            <a href={`/regions/${region.provinceSlug}/`}>{region.province}</a>
             <span>›</span>
             <strong>
               {region.fullName} {qualification.name} 학원
@@ -329,7 +329,7 @@ export default async function AcademyPage({
               <div className="sidebar-links">
                 {relatedQualifications.slice(0, 4).map((item) => (
                   <a
-                    href={`/academy/${region.slug}/${item.slug}`}
+                    href={`/academy/${region.slug}/${item.slug}/`}
                     key={item.slug}
                   >
                     {item.name} 학원
@@ -343,7 +343,7 @@ export default async function AcademyPage({
               <div className="sidebar-links">
                 {nearbyRegions.map((item) => (
                   <a
-                    href={`/academy/${item.slug}/${qualification.slug}`}
+                    href={`/academy/${item.slug}/${qualification.slug}/`}
                     key={item.slug}
                   >
                     {item.fullName}

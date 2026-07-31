@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!province) return {};
   const title = `${province.name} 전기·소방 자격증 학원 지역별 안내`;
   const description = `${province.name} 시·군·구별 전기기사, 전기산업기사, 전기공사기사, 전기기능사, 소방설비기사, 공기업·NCS 학원 선택 가이드를 확인하세요.`;
-  const canonical = `${siteUrl}/regions/${province.slug}`;
+  const canonical = `${siteUrl}/regions/${province.slug}/`;
   return {
     title,
     description,
@@ -92,7 +92,7 @@ export default async function ProvincePage({
               <div className="region-qualification-links">
                 {qualifications.map((qualification) => (
                   <a
-                    href={`/academy/${region.slug}/${qualification.slug}`}
+                    href={`/academy/${region.slug}/${qualification.slug}/`}
                     key={qualification.slug}
                   >
                     {region.fullName} {qualification.name} 학원

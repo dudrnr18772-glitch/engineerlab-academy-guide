@@ -47,6 +47,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  other: {
+    "codex-preview": "development",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

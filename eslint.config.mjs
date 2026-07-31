@@ -10,16 +10,7 @@ const eslintConfig = defineConfig([
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
-    "dist/**",
     "build/**",
-    "db/**",
-    "examples/**",
-    "worker/**",
-    "scripts/**",
-    "tests/**",
-    "vite.config.ts",
-    "drizzle.config.ts",
-    "app/chatgpt-auth.ts",
     "next-env.d.ts",
   ]),
 ]);

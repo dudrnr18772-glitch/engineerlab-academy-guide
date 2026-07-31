@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated = new Date("2026-07-24T00:00:00+09:00");
 
   const provincePages: MetadataRoute.Sitemap = provinces.map((province) => ({
-    url: `${siteUrl}/regions/${province.slug}`,
+    url: `${siteUrl}/regions/${province.slug}/`,
     lastModified: updated,
     changeFrequency: "monthly",
     priority: 0.8,
@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const detailPages: MetadataRoute.Sitemap = regions.flatMap((region) =>
     qualifications.map((qualification) => ({
-      url: `${siteUrl}/academy/${region.slug}/${qualification.slug}`,
+      url: `${siteUrl}/academy/${region.slug}/${qualification.slug}/`,
       lastModified: updated,
       changeFrequency: "monthly" as const,
       priority: 0.7,
@@ -38,4 +38,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...detailPages,
   ];
 }
-

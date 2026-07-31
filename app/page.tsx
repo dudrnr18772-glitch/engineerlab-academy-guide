@@ -204,7 +204,7 @@ export default function Home() {
             {popularRegions.map((region) =>
               region ? (
                 <a
-                  href={`/academy/${region.slug}/${qualifications[0].slug}`}
+                  href={`/academy/${region.slug}/${qualifications[0].slug}/`}
                   key={region.slug}
                 >
                   {region.fullName} 전기기사 학원
@@ -216,7 +216,7 @@ export default function Home() {
             {provinces.map((province) => (
               <a
                 className="province-card"
-                href={`/regions/${province.slug}`}
+                href={`/regions/${province.slug}/`}
                 key={province.slug}
               >
                 <span>{province.short}</span>
